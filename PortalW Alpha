@@ -46,8 +46,8 @@
 					    return;
 				if($data->data["Text1"] == "w:"){
 					    if($this->api->ban->isOp($issuer->username) == false){
-							$this->api->chat->sendTo(false, "[Мультимиры] Нет доступа!", $data->data['creator']);
-							$data->setText("[BLOCK]", $data->data["Text4"]."БЛОКИРОВАНО");
+							$this->api->chat->sendTo(false, "[Мультимиры] Нет доступа! Ты не в списке OP!", $data->data['creator']);
+							$data->setText("[BLOCK]", $data->data["Text4"]."[БЛОКИРОВАНО]");
 						break;
 					    }
                     if ($data->data["Text1"] != "w:" and $data->data["Text3"] != "tp"){
@@ -55,7 +55,7 @@
                         $lvl = $data->data["Text2"];
                     }
                     if ($this->api->level->loadLevel($lvl) === false) {
-                        $this->api->chat->sendTo(false, "Мир $lvl не существует!", $data->data['creator']);
+                        $this->api->chat->sendTo(false, "Размещено!", $data->data['creator']);
                         break;
                     }
 			    }
